@@ -1,12 +1,12 @@
-FOLDER_SRCS			= srcs
+FOLDER_SRCS			=
 
-SRCS				= ${addprefix ${FOLDER_SRCS}/, main.cpp Contact.cpp Phonebook.cpp}
+SRCS				= tests.cpp Account.cpp
 
 OBJS				= ${SRCS:.c=.o}
 
-INCLUDES			= ${addprefix ${FOLDER_SRCS}/, Phonebook.hpp Contact.hpp}
+INCLUDES			= Account.hpp
 
-NAME				= phonebook
+NAME				= account
 
 CC					= clang++
 
@@ -25,7 +25,7 @@ ${NAME}:	${OBJS}
 ${OBJS}:	${INCLUDES}
 
 clean:
-			@rm -f *.o ${FOLDER_SRCS}/*.o
+			@rm -f *.o 
 			@echo files cleaned !
 
 fclean:		clean

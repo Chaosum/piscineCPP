@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   magaphone.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/30 05:44:16 by matthieu          #+#    #+#             */
-/*   Updated: 2021/11/02 13:53:50 by mservage         ###   ########.fr       */
+/*   Created: 2021/11/02 15:14:45 by mservage          #+#    #+#             */
+/*   Updated: 2021/11/02 21:01:23 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <ctype.h>
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
+# include <iostream>
+# include <string>
+# include "Contact.hpp"
+# include <cstdlib>
 
-int	main(int ac, char **av)
+class Phonebook
 {
-	int i;
-	int j;
-	char c;
+private:
+	Contact	contact[8];
+	int		contact_number;
 
-	i = 1;
-	if (ac == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (0);
-	}
-	while (av[i])
-	{
-		j = 0;
-		while (av[i][j])
-		{
-			c = av[i][j];
-			c = std::toupper(c);
-			std::cout << c;
-			j++;
-		}
-		i++;
-	}
-	std::cout << std::endl;
-}
+public:
+	Phonebook(void);
+	~Phonebook(void);
+	void	setContact(int i);
+	int		getContact_number();
+	void	setContact_number(int nbr);
+	void	ft_add();
+	void	ft_search();
+};
+
+#endif
