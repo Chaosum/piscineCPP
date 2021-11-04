@@ -2,7 +2,7 @@ FOLDER_SRCS			=
 
 SRCS				= tests.cpp Account.cpp
 
-OBJS				= ${SRCS:.c=.o}
+OBJS				= ${SRCS:.cpp=.o}
 
 INCLUDES			= Account.hpp
 
@@ -14,15 +14,12 @@ CFLAGS				= -Wall -Wextra -Werror
 
 all:		${NAME}
 
-%.o:		%.c
+%.o:		%.cpp
 			${CC} ${CFLAGS} -o $@ -c $<
 
-${NAME}:	${OBJS}
+${NAME}:	${OBJS} ${INCLUDES}
 				${CC} ${CFLAGS} -o ${NAME} ${OBJS} 
 				@echo compilation complete !
-			
-
-${OBJS}:	${INCLUDES}
 
 clean:
 			@rm -f *.o 

@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:12:55 by mservage          #+#    #+#             */
-/*   Updated: 2021/11/02 21:57:55 by mservage         ###   ########.fr       */
+/*   Updated: 2021/11/03 16:48:57 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ int	main()
 	std::cout << " ___________________________________________ " << std::endl;
 	std::cout << "|                MY PHONEBOOK               |" << std::endl;
 	std::cout << " ------------------------------------------- " << std::endl;
-	while (1)
+	while (true)
 	{
 		std::cout << std::endl << "Command: ";
 		if (!std::getline(std::cin, line))
 			return (1);
-		if (std::strcmp(line.c_str(), "EXIT") == 0)
+		if (line == "EXIT")
 			break ;
-		else if (std::strcmp(line.c_str(), "ADD") == 0)
+		else if (line == "ADD")
 			Phonebook.ft_add();
-		else if (std::strcmp(line.c_str(), "SEARCH") == 0)
+		else if (line == "SEARCH")
 		{
 			if (Phonebook.getContact_number() == 0)
 			{

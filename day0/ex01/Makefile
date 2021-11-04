@@ -2,7 +2,7 @@ FOLDER_SRCS			= srcs
 
 SRCS				= ${addprefix ${FOLDER_SRCS}/, main.cpp Contact.cpp Phonebook.cpp}
 
-OBJS				= ${SRCS:.c=.o}
+OBJS				= ${SRCS:.cpp=.o}
 
 INCLUDES			= ${addprefix ${FOLDER_SRCS}/, Phonebook.hpp Contact.hpp}
 
@@ -14,15 +14,12 @@ CFLAGS				= -Wall -Wextra -Werror
 
 all:		${NAME}
 
-%.o:		%.c
+%.o:		%.cpp
 			${CC} ${CFLAGS} -o $@ -c $<
 
-${NAME}:	${OBJS}
+${NAME}:	${OBJS} ${INCLUDES}
 				${CC} ${CFLAGS} -o ${NAME} ${OBJS} 
 				@echo compilation complete !
-			
-
-${OBJS}:	${INCLUDES}
 
 clean:
 			@rm -f *.o ${FOLDER_SRCS}/*.o
