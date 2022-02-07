@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   FixPoint.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 14:40:43 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/07 14:28:30 by mservage         ###   ########.fr       */
+/*   Created: 2022/02/07 16:45:21 by mservage          #+#    #+#             */
+/*   Updated: 2022/02/07 17:00:27 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-# include <string>
+#ifndef FIXPOINT_HPP
+# define FIXPOINT_HPP
+
 # include <iostream>
+# include <string>
 
-class Zombie
-{
-private:
-	std::string _name;
-
+class FixPoint {
 public:
-	Zombie(void);
-	~Zombie(void);
-	void		announce(void) const;
-	void		setName(std::string name);
-	std::string getName(void) const;
-};
-void randomChump(std::string name);
-Zombie	*newZombie(std::string name);
-int	main();
+	FixPoint(void);
+	~FixPoint(void);
 
+private:
+
+}
 #endif

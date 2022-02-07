@@ -4,7 +4,7 @@ OBJS				= ${SRCS:.cpp=.o}
 
 INCLUDES			= Karen.hpp
 
-NAME				= Karen
+NAME				= karenFilter
 
 CC					= clang++
 

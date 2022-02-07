@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 14:40:43 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/07 14:28:30 by mservage         ###   ########.fr       */
+/*   Created: 2022/02/06 16:33:00 by matthieu          #+#    #+#             */
+/*   Updated: 2022/02/07 13:50:31 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-# include <string>
-# include <iostream>
+#ifndef KAREN_HPP
+#define KAREN_HPP
 
-class Zombie
+#include <iostream>
+#include <string>
+
+class Karen
 {
 private:
-	std::string _name;
+	void debug(void);
+	void info(void);
+	void warning(void);
+	void error(void);
 
 public:
-	Zombie(void);
-	~Zombie(void);
-	void		announce(void) const;
-	void		setName(std::string name);
-	std::string getName(void) const;
+	Karen(void);
+	~Karen(void);
+	void complain(std::string level);
 };
-void randomChump(std::string name);
-Zombie	*newZombie(std::string name);
-int	main();
 
 #endif
