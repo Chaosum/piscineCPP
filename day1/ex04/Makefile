@@ -1,10 +1,10 @@
 FOLDER_SRCS			=
 
-SRCS				= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS				= main.cpp
 
 OBJS				= ${SRCS:.cpp=.o}
 
-INCLUDES			= Weapon.hpp HumanA.hpp HumanB.hpp
+INCLUDES			=
 
 NAME				= replace
 

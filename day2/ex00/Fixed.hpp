@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FixPoint.hpp                                       :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:45:21 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/07 17:00:27 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/08 01:21:03 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXPOINT_HPP
-# define FIXPOINT_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 # include <iostream>
-# include <string>
 
-class FixPoint {
+class Fixed {
 public:
-	FixPoint(void);
-	~FixPoint(void);
+	Fixed(void);
+	Fixed(int	nbr);
+	Fixed(Fixed const &src);
+	~Fixed(void);
+	int	getRawBits(void) const;
+	void	setRawBits(int const raw);
+	Fixed	&operator=(Fixed const &rhs);
 
 private:
+	int	_value;
+	static const int	_bits;
+};
 
-}
 #endif
