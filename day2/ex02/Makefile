@@ -1,10 +1,10 @@
-SRCS				= main.cpp Karen.cpp
+SRCS				= main.cpp Fixed.cpp
 
 OBJS				= ${SRCS:.cpp=.o}
 
-INCLUDES			= Karen.hpp
+INCLUDES			= Fixed.hpp
 
-NAME				= karenFilter
+NAME				= a.out
 
 CC					= clang++
 
