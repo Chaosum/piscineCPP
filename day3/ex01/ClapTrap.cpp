@@ -6,25 +6,25 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:00:53 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/10 13:46:22 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/10 14:11:15 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name(""), _HitPoint(10), _EnergyPoints(10), _AttackDamage(0)
+ClapTrap::ClapTrap(): _name(""), _HitPoint(10), _EnergyPoints(10), _AttackDamage(0)
 {
 	std::cout << "ClapTrap default constructeur called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _HitPoint(10), _EnergyPoints(10), _AttackDamage(0)
+ClapTrap::ClapTrap(std::string name): _name(name), _HitPoint(10), _EnergyPoints(10), _AttackDamage(0)
 {
-	std::cout << "ClapTrap " << name << " : Name constructeur called" << std::endl;
+	std::cout << "ClapTrap " << name << " Name constructeur called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap &src)
 {
-	std::cout << "ClapTrap " << this->get_name() << " : copy constructeur called" << std::endl;
+	std::cout << "ClapTrap " << this->get_name() << " copy constructeur called" << std::endl;
 	src._name = this->_name;
 	src._HitPoint = this->_HitPoint;
 	src._EnergyPoints = this->_EnergyPoints;
@@ -33,7 +33,7 @@ ClapTrap::ClapTrap(ClapTrap &src)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << this->get_name() << " : destructor called" << std::endl;
+	std::cout << "ClapTrap " << this->get_name() << " destructor called" << std::endl;
 
 }
 
@@ -46,7 +46,7 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs)
 	return (*this);
 }
 
-std::string	ClapTrap::get_name() const
+const	std::string	ClapTrap::get_name() const
 {
 	return (this->_name);
 }
@@ -99,3 +99,4 @@ void	ClapTrap::takeDamage(unsigned int amout)
 		this->~ClapTrap();
 	}
 }
+

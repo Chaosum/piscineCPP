@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:59:57 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/10 13:43:42 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:07:03 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 class ClapTrap
 {
 public:
-	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(ClapTrap &src);
 	~ClapTrap();

@@ -6,25 +6,20 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:00:53 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/10 13:46:22 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:00:45 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name(""), _HitPoint(10), _EnergyPoints(10), _AttackDamage(0)
-{
-	std::cout << "ClapTrap default constructeur called" << std::endl;
-}
-
 ClapTrap::ClapTrap(std::string name) : _name(name), _HitPoint(10), _EnergyPoints(10), _AttackDamage(0)
 {
-	std::cout << "ClapTrap " << name << " : Name constructeur called" << std::endl;
+	std::cout << "ClapTrap " << name << " default constructeur called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap &src)
 {
-	std::cout << "ClapTrap " << this->get_name() << " : copy constructeur called" << std::endl;
+	std::cout << "ClapTrap " << this->get_name() << " copy constructeur called" << std::endl;
 	src._name = this->_name;
 	src._HitPoint = this->_HitPoint;
 	src._EnergyPoints = this->_EnergyPoints;
@@ -33,7 +28,7 @@ ClapTrap::ClapTrap(ClapTrap &src)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << this->get_name() << " : destructor called" << std::endl;
+	std::cout << "ClapTrap " << this->get_name() << " destructor called" << std::endl;
 
 }
 
@@ -74,7 +69,7 @@ void	ClapTrap::attack(const std::string &target)
 		return ;
 	}
 	this->_EnergyPoints--;
-	std::cout << "ClapTrap " << this->get_name() << " attacks " << target << ", causing " << this->get_AttackDamage() << "damages." << std::endl;
+	std::cout << "ClapTrap " << this->get_name() << " attacks " << target << ", causing " << this->get_AttackDamage() << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amout)

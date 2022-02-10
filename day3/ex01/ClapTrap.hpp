@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:59:57 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/10 13:43:42 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/10 14:10:58 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 class ClapTrap
 {
 public:
-	ClapTrap();
+	ClapTrap(void);
 	ClapTrap(std::string name);
 	ClapTrap(ClapTrap &src);
 	~ClapTrap();
 
-	std::string	get_name(void) const;
+	const std::string	get_name(void) const;
 	int		get_HitPoint(void) const;
 	int		get_EnergyPoint(void) const;
 	int		get_AttackDamage(void) const;
@@ -35,7 +35,7 @@ public:
 
 	ClapTrap	&operator=(ClapTrap const &rhs);
 	
-private:
+protected:
 	std::string	_name;
 	int			_HitPoint;
 	int			_EnergyPoints;

@@ -6,26 +6,24 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:00:53 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/10 14:37:53 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/10 14:51:43 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main()
 {
-	ClapTrap	a("bob");
-	ClapTrap	b("pierre");
-	ClapTrap	c(a);
+	ScavTrap	a("Pouet");
+	std::cout << "1 :" << a.get_name() << " HP = " << a.get_HitPoint() << " " << a.get_name() << " Energy = " << a.get_EnergyPoint() << std::endl;
+	ScavTrap	b(a);
+	ScavTrap	c("paul");
 
-	
-	b.attack(a.get_name());
-	b.takeDamage(5);
 	c = b;
-	std::cout << c.get_name() << " HP = " << c.get_HitPoint() << " " << c.get_name() << " Energy = " << c.get_EnergyPoint() << " et " << b.get_name() << " HP = " << b.get_HitPoint() << std::endl;
-	b.takeDamage(5);
-	c.beRepaired(3);
-	std::cout << c.get_name() << " HP = " << c.get_HitPoint() << " et " << c.get_name() << " Energy = " << c.get_EnergyPoint() << std::endl;
-	
+	c.guardGate();
+	c.guardGate();
+	c.attack(a.get_name());
+	c.beRepaired(10);
 	return (0);
 }
