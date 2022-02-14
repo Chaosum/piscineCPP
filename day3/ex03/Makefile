@@ -1,12 +1,12 @@
-SRCS				= main.cpp ClapTrap.cpp
+SRCS				= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJS				= ${SRCS:.cpp=.o}
 
-INCLUDES			= ClapTrap.hpp
+INCLUDES			= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
-NAME				= ClapTrap
+NAME				= DiamondTrap
 
-CC					= clang++
+CC					= c++
 
 CFLAGS				= -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 

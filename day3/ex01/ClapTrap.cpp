@@ -3,37 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:00:53 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/10 14:11:15 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/14 14:04:44 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): _name(""), _HitPoint(10), _EnergyPoints(10), _AttackDamage(0)
+ClapTrap::ClapTrap() : _name(""), _HitPoint(10), _EnergyPoints(10), _AttackDamage(0)
 {
 	std::cout << "ClapTrap default constructeur called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name): _name(name), _HitPoint(10), _EnergyPoints(10), _AttackDamage(0)
+ClapTrap::ClapTrap(std::string const name) : _name(name), _HitPoint(10), _EnergyPoints(10), _AttackDamage(0)
 {
-	std::cout << "ClapTrap " << name << " Name constructeur called" << std::endl;
+	std::cout << "ClapTrap " << name << " : Name constructeur called" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap &src)
+ClapTrap::ClapTrap(ClapTrap const &src)
 {
-	std::cout << "ClapTrap " << this->get_name() << " copy constructeur called" << std::endl;
-	src._name = this->_name;
-	src._HitPoint = this->_HitPoint;
-	src._EnergyPoints = this->_EnergyPoints;
-	src._AttackDamage = this->_AttackDamage;
+	this->_name = src._name;
+	this->_HitPoint = src._HitPoint;
+	this->_EnergyPoints = src._EnergyPoints;
+	this->_AttackDamage = src._AttackDamage;
+	std::cout << "ClapTrap " << this->get_name() << " : copy constructeur called" << std::endl;
+
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << this->get_name() << " destructor called" << std::endl;
+	std::cout << "ClapTrap " << this->get_name() << " : destructor called" << std::endl;
 
 }
 
@@ -46,7 +47,7 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs)
 	return (*this);
 }
 
-const	std::string	ClapTrap::get_name() const
+std::string	ClapTrap::get_name() const
 {
 	return (this->_name);
 }
@@ -74,7 +75,7 @@ void	ClapTrap::attack(const std::string &target)
 		return ;
 	}
 	this->_EnergyPoints--;
-	std::cout << "ClapTrap " << this->get_name() << " attacks " << target << ", causing " << this->get_AttackDamage() << "damages." << std::endl;
+	std::cout << "ClapTrap " << this->get_name() << " attacks " << target << ", causing " << this->get_AttackDamage() << " damages." << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amout)
@@ -85,7 +86,7 @@ void	ClapTrap::beRepaired(unsigned int amout)
 		return ;
 	}
 	this->_EnergyPoints--;
-	std::cout << "ClapTrap " << this->get_name() << "repaired himself and gains " << amout << " HP" << std::endl;
+	std::cout << "ClapTrap " << this->get_name() << " repaired himself and gains " << amout << " HP" << std::endl;
 	this->_HitPoint += amout;
 }
 
@@ -95,8 +96,7 @@ void	ClapTrap::takeDamage(unsigned int amout)
 	this->_HitPoint -= amout;
 	if (this->_HitPoint < 1)
 	{
-		std::cout << "ClapTrap " << this->get_name() << "got destroyed" << std::endl;
+		std::cout << "ClapTrap " << this->get_name() << " got destroyed" << std::endl;
 		this->~ClapTrap();
 	}
 }
-

@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 14:00:53 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/14 14:28:40 by matthieu         ###   ########.fr       */
+/*   Created: 2022/02/10 11:45:41 by mservage          #+#    #+#             */
+/*   Updated: 2022/02/14 14:50:26 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int	main()
+# include "ClapTrap.hpp"
+
+class ScavTrap : virtual public ClapTrap
 {
-	FragTrap	a("Pouet");
-	FragTrap	b(a);
-
-	std::cout << "1 :" << a.get_name() << " HP = " << a.get_HitPoint() << " " << a.get_name() << " Energy = " << a.get_EnergyPoint() << " Atk dmg = " << a.get_AttackDamage() << std::endl;
-
+public:
+	ScavTrap(std::string name);
+	ScavTrap(const ScavTrap &src);
+	~ScavTrap();
 	
-	a.attack(b.get_name());
-	a.hightFivesGuys();
-	return (0);
-}
+	void	attack(const std::string &target);
+	void	guardGate(void);
+	ScavTrap	&operator=(ScavTrap const &rhs);
+	
+protected:
+	int	_GateKeeper;
+	ScavTrap(void);
+};
+
+#endif

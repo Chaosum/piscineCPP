@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:59:57 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/10 13:43:42 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/11 14:59:53 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class ClapTrap
 {
 public:
 	ClapTrap();
-	ClapTrap(std::string name);
-	ClapTrap(ClapTrap &src);
+	ClapTrap(std::string const name);
+	ClapTrap(ClapTrap const &src);
 	~ClapTrap();
 
 	std::string	get_name(void) const;

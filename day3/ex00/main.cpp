@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:00:53 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/10 14:37:53 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/14 14:07:12 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int	main()
 {
 	ClapTrap	a("bob");
-	ClapTrap	b("pierre");
+	ClapTrap	b(a);
 	ClapTrap	c(a);
 
-	
+	std::cout << a.get_name() << " HP = " << a.get_HitPoint() << " " << c.get_name() << " Energy = " << c.get_EnergyPoint() << " attack damage = " << a.get_AttackDamage() << std::endl;
 	b.attack(a.get_name());
 	b.takeDamage(5);
 	c = b;

@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 14:00:53 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/14 14:28:40 by matthieu         ###   ########.fr       */
+/*   Created: 2022/02/11 14:34:10 by matthieu          #+#    #+#             */
+/*   Updated: 2022/02/14 14:38:34 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
 
-int	main()
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+
+# include "ClapTrap.hpp"
+
+class FragTrap : virtual public ClapTrap
 {
-	FragTrap	a("Pouet");
-	FragTrap	b(a);
+public:
+	FragTrap();
+	FragTrap(std::string name);
+	FragTrap(const FragTrap &src);
+	~FragTrap();
 
-	std::cout << "1 :" << a.get_name() << " HP = " << a.get_HitPoint() << " " << a.get_name() << " Energy = " << a.get_EnergyPoint() << " Atk dmg = " << a.get_AttackDamage() << std::endl;
+	FragTrap &operator=(FragTrap const &rhs);
+	void	attack(const std::string &target);
+	void	hightFivesGuys(void);
+};
 
-	
-	a.attack(b.get_name());
-	a.hightFivesGuys();
-	return (0);
-}
+#endif

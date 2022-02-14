@@ -3,29 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:00:53 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/09 15:14:32 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/14 15:14:04 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main()
 {
-	ClapTrap	a("bob");
-	ClapTrap	b("pierre");
-	ClapTrap	c(a);
+	DiamondTrap	a("Pouet");
+	std::cout << "1 :" << a.get_Diamond_name() << " HP = " << a.get_HitPoint() << " " << a.get_Diamond_name() << " Energy = " << a.get_EnergyPoint() << " Atk dmg = " << a.get_AttackDamage() << std::endl;
+	DiamondTrap	b(a);
 
-	
-	b.attack(a.get_name());
-	b.takeDamage(5);
-	c = b;
-	std::cout << c.get_name() << " HP = " << c.get_HitPoint() << " " << c.get_name() << " Energy = " << c.get_EnergyPoint() << " et " << b.get_name() << " HP = " << b.get_HitPoint() << std::endl;
-	b.takeDamage(5);
-	c.beRepaired(3);
-	std::cout << c.get_name() << " HP = " << c.get_HitPoint() << " et " << c.get_name() << " Energy = " << c.get_EnergyPoint() << std::endl;
-	
+	a.whoAmI();
+	a.diam_attack("pouet");
+	a.beRepaired(10);
+	a.guardGate();
+	a.hightFivesGuys();
 	return (0);
 }
