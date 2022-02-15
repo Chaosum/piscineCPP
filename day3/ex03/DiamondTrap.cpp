@@ -6,7 +6,7 @@
 /*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 15:14:44 by matthieu          #+#    #+#             */
-/*   Updated: 2022/02/14 15:15:51 by matthieu         ###   ########.fr       */
+/*   Updated: 2022/02/14 22:30:32 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	DiamondTrap::whoAmI()
 	std::cout << "I am both " << this->get_name() << " and " << _name << std::endl;
 }
 
-void	DiamondTrap::diam_attack(std::string const &target)
+void	DiamondTrap::attack(std::string const &target)
 {
 	ScavTrap::attack(target);
 }

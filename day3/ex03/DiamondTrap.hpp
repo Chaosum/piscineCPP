@@ -6,7 +6,7 @@
 /*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 15:11:27 by matthieu          #+#    #+#             */
-/*   Updated: 2022/02/14 15:11:37 by matthieu         ###   ########.fr       */
+/*   Updated: 2022/02/14 22:30:39 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	std::string	get_Diamond_name(void);
 	
 	std::string const &get_Diam_name(void);
-	void	diam_attack(std::string const &target);
+	void	attack(std::string const &target);
 	DiamondTrap	&operator=(DiamondTrap const &rhs);
 	void	whoAmI(void);
 private:
