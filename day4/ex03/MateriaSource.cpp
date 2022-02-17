@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 16:33:12 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/17 17:15:14 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/17 18:09:00 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ MateriaSource	&MateriaSource::operator=(MateriaSource const &rhs)
 	{
 		this->_learned[i] = rhs._learned[i];
 	}
+	return (*this);
 }
 
 void MateriaSource::learnMateria(AMateria* m)

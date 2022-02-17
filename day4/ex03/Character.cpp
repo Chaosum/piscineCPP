@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 15:53:24 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/17 17:12:03 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/17 18:06:59 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ Character	&Character::operator=(Character const &rhs)
 	{
 		this->_inventory[i] = rhs._inventory[i];
 	}
+	return (*this);
 }
+
 Character::~Character(void)
 {
 	for (int i = 0; i < 4; i++)

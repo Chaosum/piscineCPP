@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 15:26:28 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/17 17:21:26 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/17 18:06:37 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ AMateria::AMateria(void)
 {
 }
 
-AMateria::AMateria(std::string const & type)
+AMateria::AMateria(std::string const &)
 {
 }
 

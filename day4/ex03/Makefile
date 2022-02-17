@@ -1,8 +1,8 @@
-SRCS				= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp 
+SRCS				= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 OBJS				= ${SRCS:.cpp=.o}
 
-INCLUDES			= class.hpp AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp IMateriaSource.hpp
+INCLUDES			= AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp IMateriaSource.hpp MateriaSource.hpp
 
 NAME				= Metaria
 

@@ -6,17 +6,17 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 16:47:19 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/17 17:32:22 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/17 18:04:54 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
-#include "AMateria.hpp"
 #include "ICharacter.hpp"
 #include "Character.hpp"
 #include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
+#include "AMateria.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
 
