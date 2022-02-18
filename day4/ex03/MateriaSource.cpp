@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 16:33:12 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/17 18:09:00 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/18 01:00:43 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void MateriaSource::learnMateria(AMateria* m)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->_learned[i] != 0)
+		if (this->_learned[i] == 0)
 		{
 			this->_learned[i] = m;
 			return ;
@@ -62,10 +62,12 @@ void MateriaSource::learnMateria(AMateria* m)
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-	for (int i = 4; i >= 0; i--)
+	for (int i = 0; i < 4; i++)
 	{
-		if (this->_learned[i]->getType() == type)
+		if (this->_learned[i] && this->_learned[i]->getType() == type)
+		{
 			return (this->_learned[i]->clone());
+		}
 	}
 	return (0);
 }

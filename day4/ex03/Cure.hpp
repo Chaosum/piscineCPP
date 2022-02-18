@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 15:33:56 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/17 17:36:58 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/18 00:53:38 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ public:
 	Cure	&operator=(Cure const &rhs);
 	virtual	AMateria *clone() const;
 	virtual void use(ICharacter& target);
-protected:
-	std::string	_type;
 };
 
 #endif

@@ -3,29 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 15:34:41 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/17 17:33:50 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/18 01:01:57 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() : _type("cure")
+Cure::Cure()
 {
-	std::cout << "Cure default constructor" << std::endl;
+	this->_type = "cure";
+	//std::cout << "Cure default constructor" << std::endl;
 }
 
-Cure::Cure(Cure const &src)
+Cure::Cure(Cure const &src) : AMateria(src)
 {
 	this->_type = src._type;
-	std::cout << "Cure copy constructor" << std::endl;
+	//std::cout << "Cure copy constructor" << std::endl;
 }
 
 Cure::~Cure()
 {
-	std::cout << "Cure destructor" << std::endl;
+	//std::cout << "Cure destructor" << std::endl;
 }
 
 Cure	&Cure::operator=(Cure const &rhs)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 15:30:27 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/17 17:37:23 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/18 00:51:31 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ public:
 	Ice	&operator=(Ice const &rhs);
 	virtual	AMateria *clone() const;
 	virtual void use(ICharacter& target);
-	
-protected:
-	std::string	_type;
 };
 
 #endif
