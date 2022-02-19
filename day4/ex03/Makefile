@@ -4,7 +4,7 @@ OBJS				= ${SRCS:.cpp=.o}
 
 INCLUDES			= AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp IMateriaSource.hpp MateriaSource.hpp
 
-NAME				= Metaria
+NAME				= Materia
 
 CC					= c++
 
