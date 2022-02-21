@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 16:47:19 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/18 16:06:20 by matthieu         ###   ########.fr       */
+/*   Updated: 2022/02/21 16:37:20 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@
 void sub()
 {
 	IMateriaSource* src = new MateriaSource();
+	IMateriaSource* copysrc = new MateriaSource();
 	AMateria *manuallyDeletedMateria = new Ice();
 
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 	ICharacter* me = new Character("me");
+	ICharacter* you = new Character("you");
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
@@ -44,13 +46,18 @@ void sub()
 	// Commenting this line will produce a SIGABORT/SIGSEGV
 	me->unequip(2);
 
-	// Uncommenting this line should produce a leak (or not. Fuck off my code)
 	// me->unequip(0);
+
+	
+	*copysrc = *src;
+	*you = *me;
 
 	delete manuallyDeletedMateria;
 	delete bob;
 	delete me;
+	delete you;
 	delete src;
+	delete copysrc;
 }
 
 int main()

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 16:33:12 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/18 01:00:43 by matthieu         ###   ########.fr       */
+/*   Updated: 2022/02/21 16:31:34 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ MateriaSource::MateriaSource(MateriaSource const &src)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		this->_learned[i] = src._learned[i];
+		if (src._learned[i] != 0)
+			this->_learned[i] = src._learned[i]->clone();
+		else
+			this->_learned[i] = 0;
 	}
 }
 MateriaSource::~MateriaSource(void)
@@ -43,7 +46,10 @@ MateriaSource	&MateriaSource::operator=(MateriaSource const &rhs)
 	}
 	for (int i = 0; i < 4; i++)
 	{
-		this->_learned[i] = rhs._learned[i];
+		if (rhs._learned[i] != 0)
+			this->_learned[i] = rhs._learned[i]->clone();
+		else
+			this->_learned[i] = 0;
 	}
 	return (*this);
 }
