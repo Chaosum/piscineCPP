@@ -5,26 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 14:00:53 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/16 15:42:12 by mservage         ###   ########.fr       */
+/*   Created: 2022/02/21 18:05:00 by mservage          #+#    #+#             */
+/*   Updated: 2022/02/21 18:30:14 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-#include "DiamondTrap.hpp"
+#include "Bureaucrat.hpp"
 
-int	main()
+int main()
 {
-	DiamondTrap	a("Pouet");
-	std::cout << "1 :" << a.get_Diamond_name() << " HP = " << a.get_HitPoint() << " " << a.get_Diamond_name() << " Energy = " << a.get_EnergyPoint() << " Atk dmg = " << a.get_AttackDamage() << std::endl;
-	DiamondTrap	b(a);
-
-	a.whoAmI();
-	a.attack("pouet");
-	a.beRepaired(10);
-	a.guardGate();
-	a.hightFivesGuys();
+	Bureaucrat a("paul", 34);
+	std::cout << a << std::endl;
+	try
+	{
+		a.gradeDown(118);
+	}
+	catch(std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << a << std::endl;
+	try
+	{
+		a.gradeUp(33);
+	}
+	catch(std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << a << std::endl;
+	try
+	{
+		a.gradeUp(1);
+	}
+	catch(std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << a << std::endl;
 	return (0);
 }

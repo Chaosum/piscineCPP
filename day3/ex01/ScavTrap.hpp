@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 11:45:41 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/14 14:17:00 by matthieu         ###   ########.fr       */
+/*   Updated: 2022/02/16 13:45:25 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ public:
 	void	attack(const std::string &target);
 	void	guardGate(void);
 	ScavTrap	&operator=(ScavTrap const &rhs);
-	
 private:
 	int	_GateKeeper;
 	ScavTrap(void);
