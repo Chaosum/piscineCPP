@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:36:31 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/17 14:01:21 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:19:22 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat::Cat() : Animal()
 {
-	_type = "Cat";
+	this->_type = "Cat";
 	std::cout << "Cat default constructor" << std::endl;
 }
 

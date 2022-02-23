@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:34:58 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/17 14:48:15 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:35:57 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ public:
 	virtual ~Cat(void);
 
 	Cat	&operator=(Cat const &rhs);
-	void makeSound(void) const;
-protected:
-	std::string type;
+	virtual void makeSound(void) const;
+private:
 	Brain*	_brain;
 };

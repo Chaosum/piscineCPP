@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:34:01 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/17 14:32:19 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:29:30 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ public:
 	
 	Dog	&operator=(Dog const &rhs);
 	virtual void makeSound(void) const;
-protected:
-	std::string _type;
+private:
 	Brain*	_brain;
 };

@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 16:47:19 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/21 16:37:20 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:41:11 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void sub()
 	// me->unequip(0);
 
 	
+	
 	*copysrc = *src;
 	*you = *me;
 
@@ -58,6 +59,14 @@ void sub()
 	delete you;
 	delete src;
 	delete copysrc;
+	Character test;
+	{
+		Character test2 = test;
+	}
+	MateriaSource test3;
+	{
+		MateriaSource test4 = test3;
+	}
 }
 
 int main()

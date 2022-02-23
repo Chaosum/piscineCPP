@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 14:49:33 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/21 16:01:09 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:37:00 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	main()
 {
-	//const Animal test;
+	//const Animal test; //this will not compile
 	const Animal* tab[4];
 
 	std::cout << std::endl;

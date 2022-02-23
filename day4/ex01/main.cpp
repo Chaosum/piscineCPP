@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 14:49:33 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/17 15:02:34 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:25:27 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,9 @@ int	main()
 	{
 		std::cout << i + 1 << std::endl;
 		delete tab[i];
+	}
+	Dog basic;
+	{
+	Dog tmp = basic;
 	}
 }

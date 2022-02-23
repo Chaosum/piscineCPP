@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:36:17 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/17 14:32:44 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:37:57 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 Dog::Dog() : Animal()
 {
 	_brain = new Brain();
-	_type = "Dog";
+	this->_type = "Dog";
 	std::cout << "Dog default constructor" << std::endl;
 }
 
 Dog::Dog(const Dog &src) : Animal(src)
 {
 	this->_type = src._type;
+	this->_brain = new  Brain(*src._brain);
 	std::cout << "Dog " << _type << " : Copy constructor" << std::endl;
 }
 
@@ -34,6 +35,8 @@ Dog::~Dog()
 Dog	&Dog::operator=(Dog const &rhs)
 {
 	this->_type = rhs._type;
+	delete this->_brain;
+	this->_brain = new  Brain(*rhs._brain);
 	return (*this);
 }
 

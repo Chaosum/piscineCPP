@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 14:05:20 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/17 14:06:11 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:20:57 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 WrongCat::WrongCat() : WrongAnimal()
 {
-	_type = "WrongCat";
+	this->_type = "WrongCat";
 	std::cout << "WrongCat default constructor" << std::endl;
 }
 

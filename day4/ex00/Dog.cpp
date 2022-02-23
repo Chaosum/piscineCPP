@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:36:17 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/17 14:01:03 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:19:40 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Dog::Dog() : Animal()
 {
-	_type = "Dog";
+	this->_type = "Dog";
 	std::cout << "Dog default constructor" << std::endl;
 }
 
