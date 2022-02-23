@@ -14,7 +14,7 @@ CFLAGS				= -Wall -Wextra -Werror
 
 all:		${NAME}
 
-%.o:		%.cpp
+%.o:		%.cpp %.hpp
 			${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}:	${OBJS} ${INCLUDES}

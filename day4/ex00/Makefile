@@ -8,11 +8,11 @@ NAME				= Animal
 
 CC					= c++
 
-CFLAGS				= -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
+CFLAGS				= -Wall -Wextra -Werror -std=c++98 #-g3 -fsanitize=address
 
 all:		${NAME}
 
-%.o:		%.cpp
+%.o:		%.cpp %.hpp
 			${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}:	${OBJS} ${INCLUDES}

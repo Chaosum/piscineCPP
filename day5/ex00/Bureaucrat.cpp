@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:16:04 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/21 18:29:30 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/23 20:20:44 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ Bureaucrat::Bureaucrat(void): _name(""), grade (150)
 Bureaucrat::Bureaucrat(std::string const &name, int grade): _name(name)
 {
 	if (grade > 150)
-		throw Bureaucrat::GradeTooHighException();
+		throw GradeTooHighException();
 	else if (grade < 1)
-		throw Bureaucrat::GradeTooLowException();
+		throw GradeTooLowException();
 	this->grade = grade;
 }
 
@@ -55,18 +55,18 @@ std::string	const &Bureaucrat::getName(void) const
 void	Bureaucrat::gradeUp(int incr)
 {
 	if (incr < 0)
-		throw (Bureaucrat::GradeTooHighException());
+		throw (GradeTooHighException());
 	if (grade - incr < 1)
-		throw (Bureaucrat::GradeTooLowException());
+		throw (GradeTooLowException());
 	this->grade -= incr;
 }
 
 void	Bureaucrat::gradeDown(int incr)
 {
 	if (incr < 0)
-		throw (Bureaucrat::GradeTooLowException());
+		throw (GradeTooLowException());
 	if (grade + incr > 150)
-		throw (Bureaucrat::GradeTooHighException());
+		throw (GradeTooHighException());
 	this->grade += incr;
 }
 

@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 18:05:00 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/23 21:23:58 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/23 23:33:54 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 void	creation_test()
 {
@@ -275,7 +276,7 @@ void	Increment_test()
 	delete formB;
 }
 
-int main()
+void	previous_main()
 {
 std::cout << "Creation test" << std::endl;
 	creation_test();
@@ -303,4 +304,31 @@ std::cout << std::endl << "Exec test" << std::endl;
 	std::cout << "5" << std::endl;
 	exec_test(5);
 std::cout << std::endl;
+}
+
+void Intern_test()
+{
+	Bureaucrat boss("boss", 1);
+	Intern titouant;
+	Form	*temp;
+
+	temp = titouant.makeForm("Does't Exist", "jean-paul");
+	temp = titouant.makeForm("Shrubbery Creation", "pierre");
+	boss.signForm(*temp);
+	boss.executeForm(*temp);
+	delete (temp);
+	temp = titouant.makeForm("Robotomy Request", "pierre2");
+	boss.signForm(*temp);
+	boss.executeForm(*temp);
+	delete (temp);
+	temp = titouant.makeForm("Presidential Pardon", "pierre3");
+	boss.signForm(*temp);
+	boss.executeForm(*temp);
+	delete (temp);
+}
+
+int main()
+{
+	//previous_main();
+	Intern_test();
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 18:32:37 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/22 16:08:56 by matthieu         ###   ########.fr       */
+/*   Updated: 2022/02/23 15:59:49 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ public:
 	~Form();
 	class GradeTooHighException : std::exception
 	{
-		virtual const char *what()
+		const char *what() const throw()
 		{
 			return ("Grade too High");
 		}
 	};
 	class GradeTooLowException : std::exception
 	{
-		virtual const char *what()
+		const char *what() const throw()
 		{
 			return ("Grade too Low");
 		}
