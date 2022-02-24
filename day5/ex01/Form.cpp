@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 18:33:16 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/23 20:21:31 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/24 16:45:49 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ void	Form::beSigned(Bureaucrat const &src)
 
 std::ostream &operator<<(std::ostream &o, Form const &rhs)
 {
-	o << rhs.getName() <<", Form signed  " << rhs.getSigned() << "Required level for sign : " << rhs.getGradeSign() << " And for exec : " << rhs.getGradeExec() << "." << std::endl;
+	o << rhs.getName() <<", Form signed  " << rhs.getSigned() << " Required level for sign : " << rhs.getGradeSign() << " And for exec : " << rhs.getGradeExec() << "." << std::endl;
 	return (o);
 }

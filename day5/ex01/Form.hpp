@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 18:32:37 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/23 15:59:49 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/24 16:46:09 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ public:
 			return ("Grade too High");
 		}
 	};
-	class GradeTooLowException : std::exception
+	class GradeTooLowException : public std::exception
 	{
+	public:
 		const char *what() const throw()
 		{
 			return ("Grade too Low");

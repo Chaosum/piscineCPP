@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:16:04 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/23 20:21:17 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/24 16:45:31 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,16 +71,16 @@ void	Bureaucrat::gradeDown(int incr)
 		throw (GradeTooHighException());
 	this->grade += incr;
 }
-void	Bureaucrat::SignForm(Form &src)
+void	Bureaucrat::signForm(Form &src)
 {
 	try
 	{
 		src.beSigned(*this);
-		std::cout << this->getName() << "Signed " << src.getName() << std::endl;
+		std::cout << this->getName() << " Signed " << src.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << this->getGrade() << "couldn't sign " << src.getName() << " because" << e.what() << std::endl;
+		std::cout << this->getGrade() << " couldn't sign " << src.getName() << " because " << e.what() << std::endl;
 	}
 }
 
