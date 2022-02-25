@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:16:04 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/24 16:45:31 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/25 10:28:26 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,9 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade): _name(name)
 	this->grade = grade;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src)
+Bureaucrat::Bureaucrat(Bureaucrat const &src): _name(src._name)
 {
 	this->grade = src.grade;
-	this->_name = src._name;
 }
 
 Bureaucrat::~Bureaucrat(void)
@@ -40,7 +39,6 @@ Bureaucrat::~Bureaucrat(void)
 Bureaucrat	&Bureaucrat::operator=(Bureaucrat &rhs)
 {
 	this->grade = rhs.grade;
-	this->_name = rhs._name;
 	return (*this);
 }
 
@@ -57,20 +55,21 @@ std::string	const &Bureaucrat::getName(void) const
 void	Bureaucrat::gradeUp(int incr)
 {
 	if (incr < 0)
-		throw (GradeTooHighException());
+		throw NegativeIncrement();
 	if (grade - incr < 1)
-		throw (GradeTooLowException());
+		throw GradeTooLowException();
 	this->grade -= incr;
 }
 
 void	Bureaucrat::gradeDown(int incr)
 {
 	if (incr < 0)
-		throw (GradeTooLowException());
+		throw NegativeIncrement();
 	if (grade + incr > 150)
-		throw (GradeTooHighException());
+		throw GradeTooHighException();
 	this->grade += incr;
 }
+
 void	Bureaucrat::signForm(Form &src)
 {
 	try

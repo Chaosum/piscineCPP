@@ -1,10 +1,10 @@
-SRCS				= main.cpp
+SRCS				= main.cpp Span.cpp
 
 OBJS				= ${SRCS:.cpp=.o}
 
-INCLUDES			=
+INCLUDES			= Span.hpp
 
-NAME				= template
+NAME				= Span
 
 CC					= c++
 

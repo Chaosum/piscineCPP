@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:34:10 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/24 16:33:32 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/25 10:26:09 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,19 @@ public:
 			return ("Grade Too Low");
 		}
 	};
+	class NegativeIncrement : public std::exception
+	{
+	public:
+		virtual const char *what() const throw ()
+		{
+			return ("Negative increment");
+		}
+	};
 	void	gradeDown(int incr);
 	void	gradeUp(int incr);
 	void	signForm(Form &src);
 private:
-	std::string	_name;
+	std::string	const _name;
 	int			grade;
 };
 

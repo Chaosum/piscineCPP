@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 23:36:57 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/25 00:33:01 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/25 20:31:55 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ public:
 			array[i] = src.array[i];
 			i++;
 		}
+		return (*this);
 	}
 	T			&operator[](const int idx)
 	{

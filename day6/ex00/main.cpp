@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:18:52 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/25 00:52:55 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/25 18:23:43 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,14 @@ void	float_case(char *arg)
 	c = static_cast<char>(f);
 	i = static_cast<int>(f);
 	d = static_cast<double>(f);
-	if (f < 0 || f > 255)
-		std::cout << "char: overflow" << std::endl;
+	if (f < -127 || f > 127)
+		std::cout << "char: impossible" << std::endl;
 	else if (c >= 32 && c <= 126)
 		std::cout << "char : '" << c << "'" << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
 	if (f > INT_MAX || f < INT_MIN)
-		std::cout << "int : overflow" << std::endl;
+		std::cout << "int : impossible" << std::endl;
 	else
 		std::cout << "int : " << i << std::endl;
 	if (roundf(f) == f)
@@ -96,23 +96,23 @@ void	double_case(char *arg)
 	i = static_cast<int>(d);
 	f = static_cast<float>(d);
 	if (d < 0 || d > 255)
-		std::cout << "char: overflow" << std::endl;
+		std::cout << "char: impossible" << std::endl;
 	else if (c >= 32 && c <= 126)
 		std::cout << "char : '" << c << "'" << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
 	if (d > INT_MAX || d < INT_MIN)
-		std::cout << "int : overflow" << std::endl;
+		std::cout << "int : impossible" << std::endl;
 	else
 		std::cout << "int : " << i << std::endl;
 	if (isinf(f))
-		std::cout << "float : overflow" << std::endl;
+		std::cout << "float : impossible" << std::endl;
 	else if (roundf(f) == f)
 		std::cout << "float : " << f << ".0" << "f" << std::endl;
 	else
 		std::cout << "float : " << f << "f" << std::endl;
 	if (isinf(d))
-		std::cout << "double : overflow" << std::endl;
+		std::cout << "double : impossible" << std::endl;
 	else if ((double)roundf(d) == d)
 		std::cout << "double : " << d << ".0" << std::endl;
 	else

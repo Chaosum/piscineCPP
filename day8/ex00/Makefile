@@ -2,9 +2,9 @@ SRCS				= main.cpp
 
 OBJS				= ${SRCS:.cpp=.o}
 
-INCLUDES			=
+INCLUDES			= easyfind.hpp
 
-NAME				= template
+NAME				= easyfind
 
 CC					= c++
 
