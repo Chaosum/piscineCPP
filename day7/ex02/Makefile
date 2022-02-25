@@ -1,21 +1,21 @@
-SRCS				= main.cpp ClapTrap.cpp
+SRCS				= main.cpp 
 
 OBJS				= ${SRCS:.cpp=.o}
 
-INCLUDES			= ClapTrap.hpp
+INCLUDES			= Array.hpp
 
-NAME				= ClapTrap
+NAME				= array
 
 CC					= c++
 
-CFLAGS				= -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
+CFLAGS				= -Wall -Wextra -Werror -std=c++98 #-g3 -fsanitize=undefined
 
 all:		${NAME}
 
 %.o:		%.cpp ${INCLUDES}
-			${CC} ${CFLAGS} -c $< -o $@
+			${CC} ${CFLAGS}  -o $@ -c $<
 
-${NAME}:	${OBJS}
+${NAME}:	${OBJS} 
 				${CC} ${CFLAGS} -o ${NAME} ${OBJS} 
 				@echo compilation complete !
 

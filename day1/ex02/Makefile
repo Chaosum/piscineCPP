@@ -14,10 +14,10 @@ CFLAGS				= -Wall -Wextra -Werror
 
 all:		${NAME}
 
-%.o:		%.cpp %.hpp
+%.o:		%.cpp ${INCLUDES}
 			${CC} ${CFLAGS} -c $< -o $@
 
-${NAME}:	${OBJS} ${INCLUDES}
+${NAME}:	${OBJS}
 				${CC} ${CFLAGS} -o ${NAME} ${OBJS} 
 				@echo compilation complete !
 

@@ -12,10 +12,10 @@ CFLAGS				= -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 
 all:		${NAME}
 
-%.o:		%.cpp %.hpp
+%.o:		%.cpp ${INCLUDES}
 			${CC} ${CFLAGS} -c $< -o $@
 
-${NAME}:	${OBJS} ${INCLUDES}
+${NAME}:	${OBJS}
 				${CC} ${CFLAGS} -o ${NAME} ${OBJS} 
 				@echo compilation complete !
 

@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 20:53:55 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/24 21:33:59 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/25 00:56:42 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void identify(Base& p)
 	try
 	{
 		A &temp = dynamic_cast<A &>(p);
+		(void)temp;
 		std::cout << "This reference is a class type A" << std::endl;
 		return ;
 	}
@@ -83,6 +84,7 @@ void identify(Base& p)
 	try
 	{
 		B &temp = dynamic_cast<B &>(p);
+		(void)temp;
 		std::cout << "This reference is a class type A" << std::endl;
 		return ;
 	}
@@ -92,6 +94,7 @@ void identify(Base& p)
 	try
 	{
 		C &temp = dynamic_cast<C &>(p);
+		(void)temp;
 		std::cout << "This reference is a class type A" << std::endl;
 		return ;
 	}

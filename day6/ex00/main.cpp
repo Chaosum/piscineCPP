@@ -6,7 +6,7 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:18:52 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/24 19:19:13 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/25 00:52:55 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ int	is_valid_string(char *arg)
 		{
 			dot_count++;
 		}
-		else if ((arg[i] < '0' || arg[i] > '9' ) && ((i != strlen(arg) - 1) && arg[i] != 'f'))
+		else if ((arg[i] < '0' || arg[i] > '9' ) && ((i != (int)strlen(arg) - 1) && arg[i] != 'f'))
 			return (0);
 		i++;
 	}
