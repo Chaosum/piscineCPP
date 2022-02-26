@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 23:36:57 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/25 20:31:55 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/26 16:23:10 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ public:
 	}
 	T			&operator[](const int idx)
 	{
-		if (idx < 0 || idx > this->n)
+		if (idx < 0 || idx >= this->n)
 			throw WrongIndex();
 		return this->array[idx];
 	}

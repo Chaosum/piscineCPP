@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 23:41:49 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/25 20:31:34 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/26 21:55:11 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,73 +17,69 @@ void emptyTest() {
 	Array<int> array0;
 	Array<std::string> array1;
 
-	try {
+	try
+	{
 		array0[0] = 5;
-		std::cout << "WHAT?" << std::endl;
-	} catch (...) {
-		// PERFECT
+		std::cout << "Not good" << std::endl;
 	}
-
-	try {
-		array1[0] = "BONCHOUR";
-		std::cout << "WHAT? AGAIN?" << std::endl;
-	} catch (...) {
-		// Noice :)
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		array1[0] = "pouet";
+		std::cout << "not good 2" << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
 	}
 }
 
 void basicArray() {
 	Array<int> array(10);
 	std::cout << "Basic array tests" << std::endl;
-
 	std::cout << "Default initialized values" << std::endl;
-	for (unsigned int i = 0; i < (unsigned int)array.size(); ++i) {
+	for (unsigned int i = 0; i < (unsigned int)array.size(); ++i)
+	{
 		std::cout << "[" << i << "]: " << array[i] << std::endl;
 	}
-
 	std::cout << "Filling it with values" << std::endl;
-	for (unsigned int i = 0; i < (unsigned int)array.size(); ++i) {
+	for (unsigned int i = 0; i < (unsigned int)array.size(); ++i)
+	{
 		array[i] = i;
-
 		std::cout << "[" << i << "]: " << array[i] << std::endl;
 	}
-
-	std::cout << "(Again)" << std::endl;
-	for (unsigned int i = 0; i < (unsigned int)array.size(); ++i) {
-		array[i] = ((i + 8) * 42) ^ (i + 6);
-
-		std::cout << "[" << i << "]: " << array[i] << std::endl;
-	}
-
-	std::cout << "Modifying ONE value (can you find it? ( ͡° ͜ʖ ͡°) )" << std::endl;
-	array[3]++;
-	for (unsigned int i = 0; i < (unsigned int)array.size(); ++i) {
-		std::cout << "[" << i << "]: " << array[i] << std::endl;
-	}
-
-	std::cout << "Does it throw an exception?" << std::endl;
-	try {
-		std::cout << "- Out-of-bound index... ";
+	try
+	{
+		std::cout << "index too high ";
 		array[456] = 69;
-		std::cout << "No! Fail :(" << std::endl;
-	} catch (...) {
-		std::cout << "Yes! Success :D" << std::endl;
+		std::cout << "not good3" << std::endl;
 	}
-
-	try {
-		std::cout << "- Negative index... ";
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		std::cout << "Negative index ";
 		array[-1] = 420;
-		std::cout << "No! Fail :(" << std::endl;
-	} catch (...) {
-		std::cout << "Yes! Success :D" << std::endl;
+		std::cout << "not good4" << std::endl;
 	}
-
-	try {
-		std::cout << "- size() index... ";
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		std::cout << "- size() index";
 		array[array.size()] = 666;
-		std::cout << "No! Fail :(" << std::endl;
-	} catch (...) {
-		std::cout << "No! Fail :( Naaaaah just kinding. Success! 10 points to Hufflepuff" << std::endl;
+		std::cout << "not good5" << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
 	}
 }
 
@@ -91,11 +87,11 @@ void copyTests() {
 	std::cout << "Copy array tests" << std::endl;
 
 	Array<std::string> array(5);
-	array[0] = "That's a nice string you've got there";
-	array[1] = "OH! Another one!";
-	array[2] = "OwO";
-	array[3] = "You've got banned by VAC";
-	array[4] = "That's nice to dream sometimes";
+	array[0] = "Bojour";
+	array[1] = "-Salut, comment ca va ?";
+	array[2] = "Ca va et toi";
+	array[3] = "-Ca va j'essaye de valider mon day 7";
+	array[4] = "HA !";
 
 	std::cout << "Original values" << std::endl;
 	for (unsigned int i = 0; i < (unsigned int)array.size(); ++i) {
@@ -117,7 +113,7 @@ void copyTests() {
 	}
 
 	std::cout << "Modifying a value of the operator-copied array" << std::endl;
-	arrayCpy1[3] = "Wallhack intensifies";
+	arrayCpy1[3] = "-pouet";
 
 	std::cout << "Original array" << std::endl;
 	for (unsigned int i = 0; i < (unsigned int)array.size(); ++i) {

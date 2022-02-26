@@ -8,7 +8,7 @@ NAME				= array
 
 CC					= c++
 
-CFLAGS				= -Wall -Wextra -Werror -std=c++98 #-g3 -fsanitize=undefined
+CFLAGS				= -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 
 all:		${NAME}
 
