@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   span.hpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 17:54:54 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/25 19:34:35 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/28 15:08:43 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	Span	&operator=(Span const &src);
 	void	addNumber(int nbr)
 	{
-		if ((int)tab.size() == max_nbr)
+		if (tab.size() == max_nbr)
 			throw TooManyNumber();
 		nb_stocked++;
 		tab.push_back(nbr);
@@ -84,6 +84,6 @@ public:
 	};
 private:
 	int					nb_stocked;
-	int					max_nbr;
+	unsigned int		max_nbr;
 	std::vector<int>	tab;
 };
