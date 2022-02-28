@@ -2,7 +2,7 @@ SRCS				= main.cpp
 
 OBJS				= ${SRCS:.cpp=.o}
 
-INCLUDES			=
+INCLUDES			= whatever.hpp
 
 NAME				= template
 

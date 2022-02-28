@@ -2,9 +2,9 @@ SRCS				= main.cpp
 
 OBJS				= ${SRCS:.cpp=.o}
 
-INCLUDES			=
+INCLUDES			= MutanStack.hpp
 
-NAME				= template
+NAME				= mutan
 
 CC					= c++
 

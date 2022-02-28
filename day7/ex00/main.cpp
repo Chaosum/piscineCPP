@@ -6,34 +6,29 @@
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 22:31:55 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/24 22:39:19 by mservage         ###   ########.fr       */
+/*   Updated: 2022/02/28 12:06:08 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
+#include "whatever.hpp"
 
-template <typename T>
-void	swap(T &a, T &b)
+class Awesome
 {
-	T	temp;
+public:
+	Awesome( int n ) : _n( n ) {}
 
-	temp = b;
-	b = a;
-	a = temp;
-}
-
-template <typename T>
-T	min(T const a, T const b)
-{
-	return (b <= a ? b : a);
-}
-
-template <typename T>
-T	max(T const a, T const b)
-{
-	return (b >= a ? b : a);
-}
+	int	getNbr() { return (this->_n); }
+	bool operator==( Awesome const & rhs ) const { return (this->_n == rhs._n); }
+	bool operator!=( Awesome const & rhs ) const{ return (this->_n != rhs._n); }
+	bool operator>( Awesome const & rhs ) const{ return (this->_n > rhs._n); }
+	bool operator<( Awesome const & rhs ) const{ return (this->_n < rhs._n); }
+	bool operator>=( Awesome const & rhs ) const{ return (this->_n >= rhs._n); }
+	bool operator<=( Awesome const & rhs ) const{ return (this->_n <= rhs._n); }
+private:
+	int _n;
+};
 
 int main( void )
 {
@@ -50,5 +45,13 @@ int main( void )
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+
+	Awesome test(10);
+	Awesome test2(50);
+
+	swap<Awesome>(test, test2);
+	std::cout << "1 = " << test.getNbr() << " et 2 = " << test2.getNbr() << std::endl;
+	std::cout << "max( c, d ) = " << ::max( test, test2 ).getNbr() << std::endl;
+	std::cout << "min( c, d ) = " << ::min( test, test2 ).getNbr() << std::endl;
 	return 0;
 }

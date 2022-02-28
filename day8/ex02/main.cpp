@@ -5,25 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 22:40:51 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/28 13:22:30 by mservage         ###   ########.fr       */
+/*   Created: 2022/02/28 13:04:24 by mservage          #+#    #+#             */
+/*   Updated: 2022/02/28 13:17:41 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "MutanStack.hpp"
 #include <string>
-#include "whatever.hpp"
+#include <iostream>
+#include <stack>
+#include <deque>
 
 int main()
 {
-	char tab_char[5] = {'a', 'b', 'c', 'd', 'e'};
-	int tab_int[5] = {1, 2, 3, 4, 5};
-	float tab_float[5] = {1.1, 2.2, 3.3, 4.4, 5.5};
-	std::string	str_tab[5] = {"oui", "non", "pouet", "lol", "¯\\_(ツ)_/¯"};
-	
-	iter<char>(tab_char, 5, print);
-	iter<int>(tab_int, 5, print);
-	iter<float>(tab_float, 5, print);
-	iter<std::string>(str_tab, 5, print);
+	MutantStack<int> mstack;
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite)
+	{
+	std::cout << *it << std::endl;
+	++it;
+	}
+	std::stack<int> s(mstack);
 	return 0;
 }

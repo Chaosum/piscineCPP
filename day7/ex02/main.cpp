@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mservage <mservage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 23:41:49 by mservage          #+#    #+#             */
-/*   Updated: 2022/02/26 21:55:11 by matthieu         ###   ########.fr       */
+/*   Updated: 2022/02/28 11:09:44 by mservage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include "Array.hpp"
 
 void emptyTest() {
-	Array<int> array0;
-	Array<std::string> array1;
+	Array<int> testInt;
+	Array<std::string> testString;
 
 	try
 	{
-		array0[0] = 5;
+		testInt[0] = 5;
 		std::cout << "Not good" << std::endl;
 	}
 	catch (std::exception &e)
@@ -28,7 +28,7 @@ void emptyTest() {
 	}
 	try
 	{
-		array1[0] = "pouet";
+		testString[0] = "pouet";
 		std::cout << "not good 2" << std::endl;
 	}
 	catch (std::exception &e)
@@ -37,24 +37,24 @@ void emptyTest() {
 	}
 }
 
-void basicArray() {
-	Array<int> array(10);
-	std::cout << "Basic array tests" << std::endl;
-	std::cout << "Default initialized values" << std::endl;
-	for (unsigned int i = 0; i < (unsigned int)array.size(); ++i)
+void basicTest() {
+	Array<int> testInt(10);
+	std::cout << "Basic tests" << std::endl;
+	std::cout << "Default value init" << std::endl;
+	for (unsigned int i = 0; i < (unsigned int)testInt.size(); ++i)
 	{
-		std::cout << "[" << i << "]: " << array[i] << std::endl;
+		std::cout << "[" << i << "]: " << testInt[i] << std::endl;
 	}
-	std::cout << "Filling it with values" << std::endl;
-	for (unsigned int i = 0; i < (unsigned int)array.size(); ++i)
+	std::cout << "add value" << std::endl;
+	for (unsigned int i = 0; i < (unsigned int)testInt.size(); ++i)
 	{
-		array[i] = i;
-		std::cout << "[" << i << "]: " << array[i] << std::endl;
+		testInt[i] = i;
+		std::cout << "[" << i << "]: " << testInt[i] << std::endl;
 	}
 	try
 	{
 		std::cout << "index too high ";
-		array[456] = 69;
+		testInt[456] = 69;
 		std::cout << "not good3" << std::endl;
 	}
 	catch (std::exception &e)
@@ -63,8 +63,8 @@ void basicArray() {
 	}
 	try
 	{
-		std::cout << "Negative index ";
-		array[-1] = 420;
+		std::cout << "Negative index";
+		testInt[-1] = 420;
 		std::cout << "not good4" << std::endl;
 	}
 	catch (std::exception &e)
@@ -73,8 +73,8 @@ void basicArray() {
 	}
 	try
 	{
-		std::cout << "- size() index";
-		array[array.size()] = 666;
+		std::cout << "size() index";
+		testInt[testInt.size()] = 666;
 		std::cout << "not good5" << std::endl;
 	}
 	catch (std::exception &e)
@@ -84,17 +84,18 @@ void basicArray() {
 }
 
 void copyTests() {
-	std::cout << "Copy array tests" << std::endl;
+	std::cout << "Copy tests" << std::endl;
 
 	Array<std::string> array(5);
 	array[0] = "Bojour";
 	array[1] = "-Salut, comment ca va ?";
 	array[2] = "Ca va et toi";
-	array[3] = "-Ca va j'essaye de valider mon day 7";
+	array[3] = "-Ca va, j'essaye de valider mon day 7";
 	array[4] = "HA !";
 
 	std::cout << "Original values" << std::endl;
-	for (unsigned int i = 0; i < (unsigned int)array.size(); ++i) {
+	for (unsigned int i = 0; i < (unsigned int)array.size(); ++i)
+	{
 		std::cout << "[" << i << "]: " << array[i] << std::endl;
 	}
 
@@ -102,47 +103,49 @@ void copyTests() {
 	Array<std::string> arrayCpy1 = Array<std::string>(50);
 
 	std::cout << "Constructor-copied values" << std::endl;
-	for (unsigned int i = 0; i < (unsigned int)arrayCpy0.size(); ++i) {
+	for (unsigned int i = 0; i < (unsigned int)arrayCpy0.size(); ++i)
+	{
 		std::cout << "[" << i << "]: " << arrayCpy0[i] << std::endl;
 	}
 
 	std::cout << "Operator-copied values" << std::endl;
 	arrayCpy1 = arrayCpy0;
-	for (unsigned int i = 0; i < (unsigned int)arrayCpy1.size(); ++i) {
+	for (unsigned int i = 0; i < (unsigned int)arrayCpy1.size(); ++i)
+	{
 		std::cout << "[" << i << "]: " << arrayCpy1[i] << std::endl;
 	}
 
 	std::cout << "Modifying a value of the operator-copied array" << std::endl;
-	arrayCpy1[3] = "-pouet";
+	arrayCpy1[3] = "-stp valide mon day7 :'(";
 
 	std::cout << "Original array" << std::endl;
-	for (unsigned int i = 0; i < (unsigned int)array.size(); ++i) {
+	for (unsigned int i = 0; i < (unsigned int)array.size(); ++i)
+	{
 		std::cout << "[" << i << "]: " << array[i] << std::endl;
 	}
-
 	std::cout << "Constructor-copied array" << std::endl;
-	for (unsigned int i = 0; i < (unsigned int)arrayCpy0.size(); ++i) {
+	for (unsigned int i = 0; i < (unsigned int)arrayCpy0.size(); ++i)
+	{
 		std::cout << "[" << i << "]: " << arrayCpy0[i] << std::endl;
 	}
-
 	std::cout << "Operator-copied array" << std::endl;
-	for (unsigned int i = 0; i < (unsigned int)arrayCpy1.size(); ++i) {
+	for (unsigned int i = 0; i < (unsigned int)arrayCpy1.size(); ++i)
+	{
 		std::cout << "[" << i << "]: " << arrayCpy1[i] << std::endl;
 	}
-
-	try {
-		arrayCpy1[48] = "WHAT?!";
-		std::cout << "Did not throw an exception when it was supposed :(" << std::endl;
+	try
+	{
+		arrayCpy1[48] = "POUAITE";
+		std::cout << "Did not throw an exception when it was supposed" << std::endl;
 	} catch (std::exception &exception) {
 		(void)exception;
-		std::cout << "Noice :)" << std::endl;
+		std::cout << "OK" << std::endl;
 	}
 }
 
 int main(void) {
 	emptyTest();
-	basicArray();
+	basicTest();
 	copyTests();
-
 	return 0;
 }
