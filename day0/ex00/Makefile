@@ -1,12 +1,12 @@
-FOLDER_SRCS			= srcs
+FOLDER_SRCS			= 
 
-SRCS				= ${addprefix ${FOLDER_SRCS}/, magaphone.cpp}
+SRCS				= megaphone.cpp
 
 OBJS				= ${SRCS:.cpp=.o}
 
 INCLUDES			=
 
-NAME				= magaphone
+NAME				= megaphone
 
 CC					= clang++
 
@@ -14,15 +14,15 @@ CFLAGS				= -Wall -Wextra -Werror
 
 all:		${NAME}
 
-%.o:		%.cpp ${INCLUDES}
-			${CC} ${CFLAGS} -c $< -o $@
+%.o:		%.cpp
+			${CC} ${CFLAGS} -o $@ -c $<
 
-${NAME}:	${OBJS}
+${NAME}:	${OBJS} ${INCLUDES}
 				${CC} ${CFLAGS} -o ${NAME} ${OBJS} 
 				@echo compilation complete !
 
 clean:
-			@rm -f *.o ${FOLDER_SRCS}/*.o
+			@rm -f *.o
 			@echo files cleaned !
 
 fclean:		clean
