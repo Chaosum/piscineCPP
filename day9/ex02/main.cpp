@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/24 12:13:25 by matthieu          #+#    #+#             */
-/*   Updated: 2023/03/24 14:38:22 by matthieu         ###   ########.fr       */
+/*   Created: 2023/03/24 14:33:50 by matthieu          #+#    #+#             */
+/*   Updated: 2023/03/24 15:33:55 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-#include <string>
+#include "PmergeMe.hpp"
+#include <list>
 #include <iostream>
-#include <stack>
+#include <string>
 
-class RPN
-{
-private:
-	std::stack<float> numbers;
-	std::stack<char> operands;
-public:
-	RPN();
-	RPN(const RPN &src);
-	~RPN();
-	RPN	&operator=(const RPN &src);
-	bool	verifyString(std::string line);
-	bool	executeRPN(std::string line);
-	float	calculate(float first, float second, char operand);
-};
+int main(int ac, char **av){
+	
+	PmergeMe	test(ac, av);
+	test.sortList(test.getList());
+	std::list<int> mylist = test.getList();
+
+	return (0);
+}

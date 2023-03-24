@@ -1,10 +1,10 @@
-SRCS				= main.cpp BitcoinExchange.cpp
+SRCS				= main.cpp PmergeMe.cpp
 
 OBJS				= ${SRCS:.cpp=.o}
 
-INCLUDES			= BitcoinExchange.hpp
+INCLUDES			= PmergeMe.hpp
 
-NAME				= btc
+NAME				= PmergeMe
 
 CC					= c++
 

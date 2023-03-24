@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/24 12:13:25 by matthieu          #+#    #+#             */
-/*   Updated: 2023/03/24 14:38:22 by matthieu         ###   ########.fr       */
+/*   Created: 2023/03/24 14:33:43 by matthieu          #+#    #+#             */
+/*   Updated: 2023/03/24 15:22:37 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <string>
+#include <sstream>
 #include <iostream>
-#include <stack>
+#include <vector>
+#include <list>
+#include <utility>
+#include <cstdlib>
 
-class RPN
+class PmergeMe
 {
 private:
-	std::stack<float> numbers;
-	std::stack<char> operands;
+	std::vector<int> vect;
+	std::list<int>	lst;
 public:
-	RPN();
-	RPN(const RPN &src);
-	~RPN();
-	RPN	&operator=(const RPN &src);
-	bool	verifyString(std::string line);
-	bool	executeRPN(std::string line);
-	float	calculate(float first, float second, char operand);
+	PmergeMe();
+	PmergeMe(int ac, char **av);
+	PmergeMe(const PmergeMe &src);
+	~PmergeMe();
+	PmergeMe &operator=(const PmergeMe &src);
+	void	initContainers(int ac, char **av);
+	void	sortList(std::list<int> &s_list);
+	void	smallSortList(std::list<int> &s_list);
+	void	sortVector();
+	std::list<int> &getList();
 };
