@@ -6,7 +6,7 @@
 /*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 23:53:27 by matthieu          #+#    #+#             */
-/*   Updated: 2023/03/24 02:02:13 by matthieu         ###   ########.fr       */
+/*   Updated: 2023/03/24 12:30:49 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ BitcoinExchange::BitcoinExchange(BitcoinExchange const &src){
 
 BitcoinExchange::~BitcoinExchange(){
 }
+
+BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &src)
+{
+	_btcValue = src._btcValue;
+	return (*this);
+}
+
 
 void	BitcoinExchange::initMap(){
 	std::string line;
