@@ -6,7 +6,7 @@
 /*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 14:33:43 by matthieu          #+#    #+#             */
-/*   Updated: 2023/03/24 15:22:37 by matthieu         ###   ########.fr       */
+/*   Updated: 2023/03/28 00:31:28 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ class PmergeMe
 {
 private:
 	std::vector<int> vect;
-	std::list<int>	lst;
+	std::list<int> lst;
+
 public:
 	PmergeMe();
 	PmergeMe(int ac, char **av);
@@ -33,7 +34,9 @@ public:
 	PmergeMe &operator=(const PmergeMe &src);
 	void	initContainers(int ac, char **av);
 	void	sortList(std::list<int> &s_list);
-	void	smallSortList(std::list<int> &s_list);
-	void	sortVector();
+	void	sortVector(std::vector<int> &s_vect);
+	void	mergeVector(std::vector<int> &first,std::vector<int> &second);
+
 	std::list<int> &getList();
+	std::vector<int> &getVector();
 };
