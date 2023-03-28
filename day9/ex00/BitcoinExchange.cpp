@@ -6,7 +6,7 @@
 /*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 23:53:27 by matthieu          #+#    #+#             */
-/*   Updated: 2023/03/24 12:30:49 by matthieu         ###   ########.fr       */
+/*   Updated: 2023/03/28 02:09:47 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,16 @@ bool	BitcoinExchange::checkDateFormat(std::string &date) const{
 }
 
 bool	BitcoinExchange::checkAmontFormat(std::string &amount) const {
-	if (amount.empty() || amount.find_first_not_of("0123456789") != std::string::npos){
+	if (amount.empty() || amount.find_first_not_of("0123456789.") != std::string::npos){
 		std::cout << "Error: bad imput => " << amount << std::endl;
 		return (true);
 	}
-	else if (amount.size() > 4 || atoi(amount.c_str()) > 1000){
+	else if (atof(amount.c_str()) > 1000){
 		std::cout << "Error: value too big => " << amount << std::endl;
 		return (true);
 
 	}
-	else if (atoi(amount.c_str()) < 0){
+	else if (atof(amount.c_str()) < 0){
 		std::cout << "Error: negative value => " << amount << std::endl;
 		return (true);
 

@@ -6,7 +6,7 @@
 /*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 23:53:29 by matthieu          #+#    #+#             */
-/*   Updated: 2023/03/24 02:02:59 by matthieu         ###   ########.fr       */
+/*   Updated: 2023/03/28 02:13:18 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ int main(int ac, char **av){
 				date.erase(date.find('-'), 1);
 			}
 			input_data.first = atoi(date.c_str());
-			input_data.second = atoi(amount.c_str());
+			input_data.second = atof(amount.c_str());
 			std::map<int, float>::iterator it = csv_data.getElement(input_data.first);
 			if (it == csv_data.get_btcValue().end()){
 				std::cout << "Error: date too old. => " << line << std::endl;
 			}
 			else
-				std::cout << csv_data.convertDateFormat(it->first) << " => " << it->second << " = " << it->second * input_data.second << std::endl;
+				std::cout << csv_data.convertDateFormat(it->first) << " => " << input_data.second << " = " << it->second * input_data.second << std::endl;
 		}
 		line.clear();
 	}
