@@ -124,7 +124,7 @@ std::string	BitcoinExchange::convertDateFormat(int date){
 	std::string	dest;
 	sprintf(tmp, "%d", date);
 	dest = tmp;
-	dest.insert(7,"-");
+	dest.insert(6,"-");
 	dest.insert(4,"-");
 	return (dest);
 }
