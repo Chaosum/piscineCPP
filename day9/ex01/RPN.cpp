@@ -80,6 +80,10 @@ bool	RPN::executeRPN(std::string line)
 	float first = 0, second = 0, result = 0;
 	while (line[i]){
 		if (line[i] == '/' || line[i] == '*' || line[i] == '+' || line[i] == '-'){
+			if (count_numbers < 2){
+				std::cout << "Error: Not a valid RPN notation" << std::endl;
+				return (true);
+			}
 			this->operands.push(line[i]);
 			count_operands++;
 			if (count_operands && count_numbers >= 2){
