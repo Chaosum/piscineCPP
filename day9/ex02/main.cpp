@@ -47,28 +47,48 @@ int main(int ac, char **av){
 	PmergeMe	test(ac, av);
 
 	gettimeofday(&timer_start, NULL);
-	test.sortList(test.getList());
+	test.mergeInsertionSortList(test.getList());
 	gettimeofday(&timer_end, NULL);
 
 	std::list<int> mylist = test.getList();
 	std::cout << "after : ";
 	size_t i = 0;
 	std::list<int>::iterator it = mylist.begin();
+	std::list<int>::iterator itprev = it;
 	while (i < mylist.size())
 	{
 		std::cout << *it << " ";
 		i++;
+		itprev = it;
 		it++;
+		if (i < mylist.size() && *itprev >= *it){
+			std::cout << "error list not sorted" << std::endl;
+			return 1;
+		}
 	}
 	std::cout << std::endl;
 	time_in_micros = ((1000000 * timer_end.tv_sec) + timer_end.tv_usec) - ((1000000 * timer_start.tv_sec) + timer_start.tv_usec);
 	std::cout << "Time to process a range of " << mylist.size() << "elements whith std::list : " << time_in_micros << "ms" << std::endl;
 
 	gettimeofday(&timer_start, NULL);
-	test.sortVector(test.getVector());
+	test.mergeInsertionSort(test.getVector());
 	gettimeofday(&timer_end, NULL);
-	i = 0;
 	time_in_micros = ((1000000 * timer_end.tv_sec) + timer_end.tv_usec) - ((1000000 * timer_start.tv_sec) + timer_start.tv_usec);
 	std::cout << "Time to process a range of " << mylist.size() << "elements whith std::vector : " << time_in_micros << "ms" << std::endl;
+	// std::vector<int> myVector = test.getVector();
+	// std::vector<int>::iterator itv = myVector.begin();
+	// std::vector<int>::iterator itprevv = itv;
+	// i = 0;
+	// while (i < myVector.size())
+	// {
+	// 	std::cout << *itv << " ";
+	// 	i++;
+	// 	itprevv = itv;
+	// 	itv++;
+	// 	if (i < myVector.size() && *itprevv >= *itv){
+	// 		std::cout << "error list not sorted" << std::endl;
+	// 		return 1;
+	// 	}
+	// }
 	return (0);
 }

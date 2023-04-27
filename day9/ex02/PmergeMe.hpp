@@ -33,9 +33,15 @@ public:
 	~PmergeMe();
 	PmergeMe &operator=(const PmergeMe &src);
 	void	initContainers(int ac, char **av);
-	void	sortList(std::list<int> &s_list);
-	void	sortVector(std::vector<int> &s_vect);
-	void	mergeVector(std::vector<int> &first,std::vector<int> &second);
+	void	mergeVector(std::vector<int>& nums, int left, int mid, int right);
+	void 	insertionSort(std::vector<int>& nums, int left, int right);
+	void 	mergeInsertionSort(std::vector<int>& nums, int left, int right);
+	void 	mergeInsertionSort(std::vector<int>& nums);
+	void	mergeList(std::list<int>& nums, std::list<int>& left, std::list<int>& right);
+	void	insertionSortList(std::list<int>& nums);
+	void	mergeInsertionSortList(std::list<int>& nums);
+
+
 
 	std::list<int> &getList();
 	std::vector<int> &getVector();
